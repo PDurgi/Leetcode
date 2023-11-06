@@ -37,7 +37,8 @@ class Solution:
                 level_values = []
                 for j in range(y_min, y_max + 1):
                     if j in level_nodes[i]:
-                        level_values.extend(sorted(level_nodes[i][j]))
+                        for val in sorted(level_nodes[i][j]):
+                            level_values.append(val)
                 result.append(level_values)
 
         return result
