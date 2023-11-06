@@ -23,21 +23,30 @@ class Solution:
                 parent_map[node.right]=node      
         q=deque()
         q.append(need)
-        current_distance=0
+        infect=0
+        
         visited=collections.defaultdict(int)
         while q:        
             # traverse left, right and parent
+            levelflag=0
             q_len=len(q)
             for i in range(q_len):
-                treenode=q.popleft()
-                visited[treenode]=1  
+                treenode=q.popleft()    
+                visited[treenode]=1              
                 if treenode.left and visited[treenode.left]==0:
+                    visited[treenode.left]=1
                     q.append(treenode.left)
+                    levelflag=1
                 if treenode.right and visited[treenode.right]==0:
+                    visited[treenode.right]=1
                     q.append(treenode.right)
+                    levelflag=1
                 #parent
                 if treenode in parent_map.keys():
                     if parent_map[treenode] and visited[parent_map[treenode]]==0:
+                        visited[parent_map[treenode]]=1
                         q.append(parent_map[treenode])
-            current_distance+=1
-        return current_distance-1    
+                        levelflag=1
+            if levelflag==1:
+                infect+=1
+        return infect
