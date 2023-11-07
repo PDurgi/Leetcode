@@ -7,7 +7,7 @@
 
 class Solution:
     def distanceK(self, root: TreeNode, target: TreeNode, k: int) -> List[int]:
-        # first do a DFS and add the parent node for each of the node in a hashmap
+        # first do a BFS and add the parent node for each of the node in a hashmap
         parent_map={}
         queue=[]
         queue.append(root)
