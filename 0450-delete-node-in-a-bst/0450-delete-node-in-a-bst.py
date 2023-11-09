@@ -27,10 +27,10 @@ class Solution:
             elif not node.right:
                 return node.left
             #else thre will be two children
-            #replace with min in right sub tree
-            current=node.right
-            while current.left:
-                current=current.left
+            #replace with max in left sub tree
+            current=node.left
+            while current.right:
+                current=current.right
             node.val=current.val
-            node.right=self.deleteNode(node.right,node.val)
+            node.left=self.deleteNode(node.left,node.val)
         return node        
