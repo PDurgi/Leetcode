@@ -1,3 +1,4 @@
+#similar to number of islands, except that we call bfs/dfs only once
 class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
         self.startcolor=image[sr][sc]
@@ -6,7 +7,6 @@ class Solution:
         self.visited = [[0 for _ in range(self.cols)] for _ in range(self.rows)]
         self.bfs(sr,sc,image,color)
         return image
-
 
     def bfs(self, start_row, start_col,grid,color):
         self.visited[start_row][start_col] = 1
