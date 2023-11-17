@@ -2,6 +2,7 @@ class Solution:
     def numDistinctIslands(self, grid: List[List[int]]) -> int:
         #extension to no.of islands problem
         #solving this using dfs
+        #store the shape of island into a set and return the len of set
         islands=set()
         rows=len(grid)
         cols=len(grid[0])
