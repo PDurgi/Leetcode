@@ -3,6 +3,8 @@ class Solution:
         #pre-req : Topological sort
         #if topological sort is possible ( there is no cycle) , we say that we can finish all courses
         # if topo sort is not possible then len(topo array)  will not be equal to number of nodes
+        # imp: indicates that you must take course bi first if you want to take course ai. b1->a1 edge
+        
 
         indegree=[0]*numCourses
         queue=collections.deque()
