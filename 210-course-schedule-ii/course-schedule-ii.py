@@ -9,8 +9,8 @@ class Solution:
         adj_list=collections.defaultdict(list)
         
         for prereq in prerequisites:
-            adj_list[prereq[0]].append(prereq[1])
-            indegree[prereq[1]]+=1
+            adj_list[prereq[1]].append(prereq[0])
+            indegree[prereq[0]]+=1
         for i in range(numCourses):
             if indegree[i]==0:
                 queue.append(i)
@@ -26,5 +26,5 @@ class Solution:
                     queue.append(neighbour)
         
         if len(topo_sort)==numCourses:
-            return topo_sort[::-1]
+            return topo_sort
         return []       
