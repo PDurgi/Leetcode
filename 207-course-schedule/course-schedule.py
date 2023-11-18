@@ -1,7 +1,8 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         #pre-req : Topological sort
-        #if topological sort is possible ( there is no cycle) , we say that we can finish them
+        #if topological sort is possible ( there is no cycle) , we say that we can finish all courses
+        # if topo sort is not possible then len(topo array)  will not be equal to number of nodes
         indegree=[0]*numCourses
         queue=collections.deque()
         adj_list=collections.defaultdict(list)
