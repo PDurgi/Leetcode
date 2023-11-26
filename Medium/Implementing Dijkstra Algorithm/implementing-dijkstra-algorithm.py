@@ -7,16 +7,17 @@ class Solution:
     def dijkstra(self, V, adj, S):
 
         queue=[]
-        heapq.heappush(queue, (S,0))
+        #push distance and node as (0, source)
+        heapq.heappush(queue, (0,S))
         distance=[float('inf')]*V
         distance[S]=0
         while queue:
-          node,source_dist=heapq.heappop(queue)
+          source_dist,node=heapq.heappop(queue)
           for neighbour,dist in adj[node]:
  
             if dist + source_dist < distance[neighbour]:
                 distance[neighbour]=dist + source_dist
-                heapq.heappush(queue, (neighbour, distance[neighbour]))
+                heapq.heappush(queue, (distance[neighbour], neighbour))
         return distance
 
 #{ 
