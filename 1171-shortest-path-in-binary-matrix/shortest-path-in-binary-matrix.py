@@ -31,5 +31,6 @@ class Solution:
                             distance[delta_r][delta_c]=dist+1
                             queue.append((dist+1,(delta_r,delta_c)))
  
-        return -1
+        #target is not reachable
+        return -1 
         
