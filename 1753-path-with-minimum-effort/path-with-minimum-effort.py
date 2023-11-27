@@ -4,6 +4,7 @@ class Solution:
         #we will use dijkstra's algorithm logic and a priority queue(min)
         # the only logic is we will look at the abs difference between cells
         #similar to binary maze problem 
+        #by the time we every node stores min distance from source in dijkstra's
         rows=len(heights)
         cols=len(heights[0])
         distance = [[float('inf') for _ in range(cols)] for _ in range(rows)]
