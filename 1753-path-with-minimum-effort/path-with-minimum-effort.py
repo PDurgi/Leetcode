@@ -23,6 +23,7 @@ class Solution:
                 dr=row+direction[0]
                 dc=col+direction[1]                
                 if dr in range(0,rows) and dc in range(0,cols):
+                    #A route's effort is the maximum absolute difference in heights between two consecutive cells of the route.
                     abs_diff=max(abs(heights[row][col]-heights[dr][dc] ),difference)
                     if abs_diff < distance[dr][dc]:
                         distance[dr][dc]=abs_diff
