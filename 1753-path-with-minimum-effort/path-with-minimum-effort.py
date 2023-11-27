@@ -4,7 +4,7 @@ class Solution:
         #we will use dijkstra's algorithm logic and a priority queue(min)
         # the only logic is we will look at the abs difference between cells
         #similar to binary maze problem 
-        
+        #T.C = ElogV => rows*cols*4log(rows*cols)
         rows=len(heights)
         cols=len(heights[0])
         distance = [[float('inf') for _ in range(cols)] for _ in range(rows)]
@@ -21,7 +21,7 @@ class Solution:
                 #once we get the target/destination it means that the priority queue has popped out min distance
                 #the difference values being popped next will be only greater than the current value
                 #i.e if difference is now 2, next popped values will be greater. therefore we return
-                
+
                 return difference
                 
             for direction in directions:
