@@ -18,8 +18,12 @@ class Solution:
         while queue:
             difference,(row,col)=heapq.heappop(queue)
             if (row,col)==target:
-                result=difference
-                break
+                #once we get the target/destination it means that the priority queue has popped out min distance
+                #the difference values being popped next will be only greater than the current value
+                #i.e if difference is now 2, next popped values will be greater. therefore we return
+                
+                return difference
+                
             for direction in directions:
                 dr=row+direction[0]
                 dc=col+direction[1]                
