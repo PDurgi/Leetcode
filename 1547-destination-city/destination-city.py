@@ -1,6 +1,8 @@
 import collections
 class Solution:
     def destCity(self, paths: List[List[str]]) -> str:
+        #if we do a bfs if space complexity is not an issue
+        
         adj_list=collections.defaultdict(list)
         queue=collections.deque()
         for path in paths:
