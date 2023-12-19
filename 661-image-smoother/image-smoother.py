@@ -2,6 +2,7 @@ from typing import List
 
 class Solution:
     def imageSmoother(self, img: List[List[int]]) -> List[List[int]]:
+        #we can do it inplace using bit manipulation method
         #brute force solution=> in O(9*N*M)) OR just O(N*M) AND extra space for result matrix
         rows = len(img)
         cols = len(img[0])
