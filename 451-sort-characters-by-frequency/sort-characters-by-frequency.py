@@ -11,13 +11,13 @@ class Solution:
         for key,val in str_dict.items():
             freq[val].append(key)
         
-        res=[]
+        res=""
         for i in range(len(s),0,-1):
             if i in freq.keys():
                 for char in freq[i]:
-                    res.append(char*i)
+                    res+=char*i
         
-        return "".join(res)
+        return res
 
 
 
