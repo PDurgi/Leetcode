@@ -27,7 +27,6 @@ class Solution:
                     stops[neighbour]= nextstops
                     heapq.heappush(queue,(cost+source_price,neighbour,nextstops)) 
                 
-
         if price[dst]==math.inf:
             return -1
         return price[dst]
